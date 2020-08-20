@@ -6,6 +6,15 @@ public class CommandManager {
 
     static {
         commands.add(new Unknown("unknown"));
+        commands.add(new Weather("Погода"));
+        commands.add(new Hello("Привет"));
+        commands.add(new Level("lvl"));
+        commands.add(new Level("up"));
+        commands.add(new Dialog("Как"));
+        commands.add(new Dialog("Плохо"));
+        commands.add(new Dialog("Хорошо"));
+        commands.add(new Dialog("Отлично"));
+        commands.add(new Dialog("Такое"));
     }
 
     public static HashSet<Command> getCommands() {

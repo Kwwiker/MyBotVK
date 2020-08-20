@@ -3,7 +3,11 @@ import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.users.UserXtrCounters;
 import com.vk.api.sdk.queries.messages.MessagesSendQuery;
 
+import java.util.HashMap;
+
 public class VKManager {
+
+
     public static VKCore vkCore;
 
     static {
@@ -25,6 +29,24 @@ public class VKManager {
                     .send(vkCore.getActor())
                     .peerId(peerId)
                     .message(msg)
+                    .execute();
+        } catch (ApiException | ClientException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMessage(String msg, int peerId, String attachment) {
+        if (msg == null) {
+            System.out.println("null");
+            return;
+        }
+        try {
+            vkCore.getVk()
+                    .messages()
+                    .send(vkCore.getActor())
+                    .peerId(peerId)
+                    .message(msg)
+                    .attachment(attachment)
                     .execute();
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
@@ -57,4 +79,5 @@ public class VKManager {
         }
         return null;
     }
+
 }
