@@ -15,6 +15,7 @@ public class CommandManager {
         commands.add(new Dialog("Хорошо"));
         commands.add(new Dialog("Отлично"));
         commands.add(new Dialog("Такое"));
+        commands.add(new Dialog("help"));
     }
 
     public static HashSet<Command> getCommands() {
